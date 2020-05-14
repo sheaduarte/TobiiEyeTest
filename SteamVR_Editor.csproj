@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{40E655D7-1D39-0E69-0D9E-1007A49EB0EE}</ProjectGuid>
+    <ProjectGuid>{AD392DB8-BAA3-E1C2-859C-2E07C06292CB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>SteamVR_Editor</AssemblyName>
@@ -73,16 +73,16 @@
     <Compile Include="Assets\SteamVR\Editor\SteamVR_UpdateModeEditor.cs" />
     <None Include="Assets\SteamVR\Editor\SteamVR_Editor.asmdef" />
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/seduarte/Documents/UnityProjects/TobiiTest/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/seduarte/Documents/GitHub/TobiiEyeTest/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/seduarte/Documents/UnityProjects/TobiiTest/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/seduarte/Documents/GitHub/TobiiEyeTest/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.TestRunner">
-      <HintPath>C:/Users/seduarte/Documents/UnityProjects/TobiiTest/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
+      <HintPath>C:/Users/seduarte/Documents/GitHub/TobiiEyeTest/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TestRunner">
-      <HintPath>C:/Users/seduarte/Documents/UnityProjects/TobiiTest/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+      <HintPath>C:/Users/seduarte/Documents/GitHub/TobiiEyeTest/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -274,10 +274,10 @@
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="Valve.Newtonsoft.Json">
-      <HintPath>C:/Users/seduarte/Documents/UnityProjects/TobiiTest/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
+      <HintPath>C:/Users/seduarte/Documents/GitHub/TobiiEyeTest/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>C:/Users/seduarte/Documents/UnityProjects/TobiiTest/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
+      <HintPath>C:/Users/seduarte/Documents/GitHub/TobiiEyeTest/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.3f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -636,7 +636,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="SteamVR.csproj">
-      <Project>{7EDE4995-1811-94D9-3F23-BF1D9C987F35}</Project>
+      <Project>{E819A7DE-A8DA-6BE8-013A-C30F2EB1E423}</Project>
       <Name>SteamVR</Name>
     </ProjectReference>
   </ItemGroup>

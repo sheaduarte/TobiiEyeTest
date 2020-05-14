@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{13A53962-B57B-B038-69F1-961B9EEC9B57}</ProjectGuid>
+    <ProjectGuid>{9CDC144D-F02C-6801-2A5D-AC09E9337560}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>TobiiXRG2OM</AssemblyName>
@@ -80,10 +80,10 @@
     <None Include="Assets\TobiiXR\G2OM\TobiiXRG2OM.asmdef" />
     <None Include="Assets\TobiiXR\G2OM\README.txt" />
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/seduarte/Documents/UnityProjects/TobiiTest/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/seduarte/Documents/GitHub/TobiiEyeTest/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/seduarte/Documents/UnityProjects/TobiiTest/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/seduarte/Documents/GitHub/TobiiEyeTest/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -275,7 +275,7 @@
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="Valve.Newtonsoft.Json">
-      <HintPath>C:/Users/seduarte/Documents/UnityProjects/TobiiTest/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
+      <HintPath>C:/Users/seduarte/Documents/GitHub/TobiiEyeTest/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.3f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

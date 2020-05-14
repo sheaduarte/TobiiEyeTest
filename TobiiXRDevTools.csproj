@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{F95443EA-D011-534F-FFC3-3819313F58F9}</ProjectGuid>
+    <ProjectGuid>{1F08AFD6-C346-E9D2-97A9-F3F144D5FCF3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>TobiiXRDevTools</AssemblyName>
@@ -97,10 +97,10 @@
     <None Include="Assets\TobiiXR\DevTools\DevToolMenu\Fonts\MerriweatherSans.txt" />
     <None Include="Assets\TobiiXR\DevTools\TobiiXRDevTools.asmdef" />
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/seduarte/Documents/UnityProjects/TobiiTest/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/seduarte/Documents/GitHub/TobiiEyeTest/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/seduarte/Documents/UnityProjects/TobiiTest/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/seduarte/Documents/GitHub/TobiiEyeTest/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -292,7 +292,7 @@
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="Valve.Newtonsoft.Json">
-      <HintPath>C:/Users/seduarte/Documents/UnityProjects/TobiiTest/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
+      <HintPath>C:/Users/seduarte/Documents/GitHub/TobiiEyeTest/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.3f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -642,15 +642,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="TobiiXRCore.csproj">
-      <Project>{51BECFD5-A575-259B-1049-3AD2CB03BAB9}</Project>
+      <Project>{DBB5191B-4DCA-FB04-F06E-55F76D7E2101}</Project>
       <Name>TobiiXRCore</Name>
     </ProjectReference>
     <ProjectReference Include="TobiiXRG2OM.csproj">
-      <Project>{13A53962-B57B-B038-69F1-961B9EEC9B57}</Project>
+      <Project>{9CDC144D-F02C-6801-2A5D-AC09E9337560}</Project>
       <Name>TobiiXRG2OM</Name>
     </ProjectReference>
     <ProjectReference Include="TobiiXRSDK.csproj">
-      <Project>{7624F602-96A3-9ADA-1F47-72EE1FC3C940}</Project>
+      <Project>{5A6AC13F-A195-E6C6-7E6B-7A5EB1A5EF97}</Project>
       <Name>TobiiXRSDK</Name>
     </ProjectReference>
   </ItemGroup>

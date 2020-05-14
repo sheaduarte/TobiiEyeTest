@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{97A03066-EC96-0B64-A6E0-A5F3EBECB6D4}</ProjectGuid>
+    <ProjectGuid>{3284FC8C-44AA-978D-BAAF-EBB6311E940D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -68,11 +68,13 @@
     <Compile Include="Assets\Butterflies_cartoon\Scripts\CharacterController.cs" />
     <Compile Include="Assets\InputController.cs" />
     <Compile Include="Assets\TobiiXR\Examples\HandEyeCoordination_Example\Plugins\Tobii.HEC.Interop.cs" />
+    <Compile Include="Assets\TobiiXR\Examples\HandEyeCoordination_Example\Scripts\GUIonGaze.cs" />
     <Compile Include="Assets\TobiiXR\Examples\HandEyeCoordination_Example\Scripts\Grabbing\GazeGrab.cs" />
     <Compile Include="Assets\TobiiXR\Examples\HandEyeCoordination_Example\Scripts\Grabbing\GazeGrabbableObject.cs" />
     <Compile Include="Assets\TobiiXR\Examples\HandEyeCoordination_Example\Scripts\Throwing\GazeThrowTarget.cs" />
     <Compile Include="Assets\TobiiXR\Examples\HandEyeCoordination_Example\Scripts\Throwing\GazeThrowableObject.cs" />
     <Compile Include="Assets\TobiiXR\Examples\HandEyeCoordination_Example\Scripts\Throwing\ThrowAtGaze.cs" />
+    <Compile Include="Assets\TobiiXR\Examples\HandEyeCoordination_Example\Scripts\UIController.cs" />
     <Compile Include="Assets\TobiiXR\Examples\HandEyeCoordination_Example\Scripts\Utilities\GazeOutline.cs" />
     <Compile Include="Assets\TobiiXR\Examples\HandEyeCoordination_Example\Scripts\Utilities\ResetObjectPosition.cs" />
     <Compile Include="Assets\TobiiXR\Examples\HandEyeCoordination_Example\Scripts\Utilities\TobiiXRThrowingSceneManager.cs" />
@@ -142,51 +144,69 @@
     <Compile Include="Assets\ViveSR\Scripts\SRWorks_Enums.cs" />
     <Compile Include="Assets\ViveSR\Scripts\SRanipal_API.cs" />
     <Compile Include="Assets\ViveSR\Scripts\SRanipal_Enums.cs" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TobiiXR\External\readme.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\ViveSR\Shaders\DartBoardShader.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\TobiiXR\readme.txt" />
+    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TobiiXR\Examples\HandEyeCoordination_Example\Shaders\LICENSE.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TobiiXR\Examples\HandEyeCoordination_Example\Shaders\UltimateOutline.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\TobiiXR\External\Providers\Vive\readme.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\ViveSR\Shaders\Unlit-Alpha2Gray.shader" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/seduarte/Documents/UnityProjects/TobiiTest/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/seduarte/Documents/GitHub/TobiiEyeTest/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/seduarte/Documents/UnityProjects/TobiiTest/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/seduarte/Documents/GitHub/TobiiEyeTest/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/seduarte/Documents/UnityProjects/TobiiTest/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/seduarte/Documents/GitHub/TobiiEyeTest/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/seduarte/Documents/UnityProjects/TobiiTest/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/seduarte/Documents/GitHub/TobiiEyeTest/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/seduarte/Documents/UnityProjects/TobiiTest/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/seduarte/Documents/GitHub/TobiiEyeTest/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/seduarte/Documents/UnityProjects/TobiiTest/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/seduarte/Documents/GitHub/TobiiEyeTest/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.XR.LegacyInputHelpers">
-      <HintPath>C:/Users/seduarte/Documents/UnityProjects/TobiiTest/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
+      <HintPath>C:/Users/seduarte/Documents/GitHub/TobiiEyeTest/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/seduarte/Documents/UnityProjects/TobiiTest/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/seduarte/Documents/GitHub/TobiiEyeTest/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.SpatialTracking">
-      <HintPath>C:/Users/seduarte/Documents/UnityProjects/TobiiTest/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
+      <HintPath>C:/Users/seduarte/Documents/GitHub/TobiiEyeTest/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
-      <HintPath>C:/Users/seduarte/Documents/UnityProjects/TobiiTest/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
+      <HintPath>C:/Users/seduarte/Documents/GitHub/TobiiEyeTest/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/seduarte/Documents/UnityProjects/TobiiTest/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/seduarte/Documents/GitHub/TobiiEyeTest/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.XR.LegacyInputHelpers">
-      <HintPath>C:/Users/seduarte/Documents/UnityProjects/TobiiTest/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
+      <HintPath>C:/Users/seduarte/Documents/GitHub/TobiiEyeTest/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/seduarte/Documents/UnityProjects/TobiiTest/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/seduarte/Documents/GitHub/TobiiEyeTest/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -366,7 +386,7 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
     </Reference>
     <Reference Include="Valve.Newtonsoft.Json">
-      <HintPath>C:/Users/seduarte/Documents/UnityProjects/TobiiTest/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
+      <HintPath>C:/Users/seduarte/Documents/GitHub/TobiiEyeTest/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.3f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -725,48 +745,52 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="TobiiXREditor.csproj">
-      <Project>{5DBDACD9-3B5A-4392-24D6-CAE59B5DA6A6}</Project>
+      <Project>{4F2B1E3F-C6BE-DC3C-DBE8-21C833CC9338}</Project>
       <Name>TobiiXREditor</Name>
     </ProjectReference>
     <ProjectReference Include="TobiiXRSDK.csproj">
-      <Project>{7624F602-96A3-9ADA-1F47-72EE1FC3C940}</Project>
+      <Project>{5A6AC13F-A195-E6C6-7E6B-7A5EB1A5EF97}</Project>
       <Name>TobiiXRSDK</Name>
     </ProjectReference>
     <ProjectReference Include="GazeModifierEditor.csproj">
-      <Project>{35237385-7380-21A5-32AF-E10E36A8EC1F}</Project>
+      <Project>{9F58D882-E2FD-E00A-F9A8-1F87D20BDD3F}</Project>
       <Name>GazeModifierEditor</Name>
     </ProjectReference>
     <ProjectReference Include="TobiiXRCore.csproj">
-      <Project>{51BECFD5-A575-259B-1049-3AD2CB03BAB9}</Project>
+      <Project>{DBB5191B-4DCA-FB04-F06E-55F76D7E2101}</Project>
       <Name>TobiiXRCore</Name>
     </ProjectReference>
     <ProjectReference Include="TobiiXRInternalEditor.csproj">
-      <Project>{004F3D5B-4C99-40A5-604C-8118803C78C1}</Project>
+      <Project>{F742596B-E07B-CAD2-2015-C08A6BF81A62}</Project>
       <Name>TobiiXRInternalEditor</Name>
     </ProjectReference>
     <ProjectReference Include="TobiiXRG2OM.csproj">
-      <Project>{13A53962-B57B-B038-69F1-961B9EEC9B57}</Project>
+      <Project>{9CDC144D-F02C-6801-2A5D-AC09E9337560}</Project>
       <Name>TobiiXRG2OM</Name>
     </ProjectReference>
     <ProjectReference Include="SteamVR_Input_Editor.csproj">
-      <Project>{7865E800-F428-6575-C12E-849F6A5DE59B}</Project>
+      <Project>{64B987B2-613F-465D-BEDF-CE65A7CF5D66}</Project>
       <Name>SteamVR_Input_Editor</Name>
     </ProjectReference>
     <ProjectReference Include="TobiiXRDevTools.csproj">
-      <Project>{F95443EA-D011-534F-FFC3-3819313F58F9}</Project>
+      <Project>{1F08AFD6-C346-E9D2-97A9-F3F144D5FCF3}</Project>
       <Name>TobiiXRDevTools</Name>
     </ProjectReference>
     <ProjectReference Include="SteamVR_Editor.csproj">
-      <Project>{40E655D7-1D39-0E69-0D9E-1007A49EB0EE}</Project>
+      <Project>{AD392DB8-BAA3-E1C2-859C-2E07C06292CB}</Project>
       <Name>SteamVR_Editor</Name>
     </ProjectReference>
     <ProjectReference Include="SteamVR.csproj">
-      <Project>{7EDE4995-1811-94D9-3F23-BF1D9C987F35}</Project>
+      <Project>{E819A7DE-A8DA-6BE8-013A-C30F2EB1E423}</Project>
       <Name>SteamVR</Name>
     </ProjectReference>
     <ProjectReference Include="SteamVR_Windows_EditorHelper.csproj">
-      <Project>{057316DE-7DAA-8E6E-604F-2FE052C87499}</Project>
+      <Project>{1793E442-6E1C-F5CF-94CC-FAC424C165CF}</Project>
       <Name>SteamVR_Windows_EditorHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="SteamVR_Actions.csproj">
+      <Project>{D1CEF715-B598-2B37-C184-BA95CDAA7E14}</Project>
+      <Name>SteamVR_Actions</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
