@@ -85,6 +85,18 @@
     {
       "name": "/actions/eyetest/in/GUIoff",
       "type": "boolean"
+    },
+    {
+      "name": "/actions/eyetest/in/trackPosition",
+      "type": "vector2"
+    },
+    {
+      "name": "/actions/eyetest/in/trackClick",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/eyetest/in/trackTouch",
+      "type": "boolean"
     }
   ],
   "action_sets": [

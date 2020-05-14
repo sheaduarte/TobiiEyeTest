@@ -24,5 +24,29 @@ namespace Valve.VR
                 return SteamVR_Actions.eyetest_GUIoff;
             }
         }
+        
+        public virtual SteamVR_Action_Vector2 trackPosition
+        {
+            get
+            {
+                return SteamVR_Actions.eyetest_trackPosition;
+            }
+        }
+        
+        public virtual SteamVR_Action_Boolean trackClick
+        {
+            get
+            {
+                return SteamVR_Actions.eyetest_trackClick;
+            }
+        }
+        
+        public virtual SteamVR_Action_Boolean trackTouch
+        {
+            get
+            {
+                return SteamVR_Actions.eyetest_trackTouch;
+            }
+        }
     }
 }

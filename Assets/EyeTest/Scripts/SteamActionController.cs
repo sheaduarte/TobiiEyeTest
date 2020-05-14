@@ -4,10 +4,13 @@ using UnityEngine;
 using UnityEngine.XR;
 using Valve.VR;
 
-public class InputController : MonoBehaviour
+public class SteamActionController : MonoBehaviour
 {
     // a reference to the action
     public SteamVR_Action_Boolean onGUIOff;
+    public SteamVR_Action_Boolean onTrackClick;
+    public SteamVR_Action_Boolean onTrackTouch;
+    public SteamVR_Action_Vector2 onTrackPosition;
     // a reference to the hand
     public SteamVR_Input_Sources handType;
     public UIController uiController;
@@ -24,24 +27,9 @@ public void GuiOff(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources from
         Debug.Log("Trigger Down");
     }
 
-    // Update is called once per frame
-    //void Update()
-    //{
-    //    if (Input.GetButtonDown("XRI_Right_TriggerButton"))
-    //    {
-    //        rightCube.SetActive(false);
-    //    }
-    //    if (Input.GetButtonUp("XRI_Right_TriggerButton"))
-    //    {
-    //        rightCube.SetActive(true);
-    //    }
-    //    if (Input.GetButtonDown("XRI_Left_TriggerButton"))
-    //    {
-    //        leftCube.SetActive(false);
-    //    }
-    //    if (Input.GetButtonUp("XRI_Left_TriggerButton"))
-    //    {
-    //        leftCube.SetActive(true);
-    //    }
-    //}
+    public void GetTrackPadAxis(SteamVR_Action_Vector2 fromAction, SteamVR_Input_Sources fromSource, Vector2 axis, Vector2 delta)
+    {
+        Debug.Log("trackpad " + axis.x);
+    }
+
 }

@@ -688,6 +688,10 @@
       <Project>{9CDC144D-F02C-6801-2A5D-AC09E9337560}</Project>
       <Name>TobiiXRG2OM</Name>
     </ProjectReference>
+    <ProjectReference Include="SteamVR_Actions.csproj">
+      <Project>{D1CEF715-B598-2B37-C184-BA95CDAA7E14}</Project>
+      <Name>SteamVR_Actions</Name>
+    </ProjectReference>
     <ProjectReference Include="SteamVR_Input_Editor.csproj">
       <Project>{64B987B2-613F-465D-BEDF-CE65A7CF5D66}</Project>
       <Name>SteamVR_Input_Editor</Name>
@@ -707,10 +711,6 @@
     <ProjectReference Include="SteamVR_Windows_EditorHelper.csproj">
       <Project>{1793E442-6E1C-F5CF-94CC-FAC424C165CF}</Project>
       <Name>SteamVR_Windows_EditorHelper</Name>
-    </ProjectReference>
-    <ProjectReference Include="SteamVR_Actions.csproj">
-      <Project>{D1CEF715-B598-2B37-C184-BA95CDAA7E14}</Project>
-      <Name>SteamVR_Actions</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

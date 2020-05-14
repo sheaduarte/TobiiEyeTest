@@ -57,6 +57,12 @@ namespace Valve.VR
         
         private static SteamVR_Action_Boolean p_eyetest_GUIoff;
         
+        private static SteamVR_Action_Vector2 p_eyetest_trackPosition;
+        
+        private static SteamVR_Action_Boolean p_eyetest_trackClick;
+        
+        private static SteamVR_Action_Boolean p_eyetest_trackTouch;
+        
         public static SteamVR_Action_Boolean default_InteractUI
         {
             get
@@ -217,6 +223,30 @@ namespace Valve.VR
             }
         }
         
+        public static SteamVR_Action_Vector2 eyetest_trackPosition
+        {
+            get
+            {
+                return SteamVR_Actions.p_eyetest_trackPosition.GetCopy<SteamVR_Action_Vector2>();
+            }
+        }
+        
+        public static SteamVR_Action_Boolean eyetest_trackClick
+        {
+            get
+            {
+                return SteamVR_Actions.p_eyetest_trackClick.GetCopy<SteamVR_Action_Boolean>();
+            }
+        }
+        
+        public static SteamVR_Action_Boolean eyetest_trackTouch
+        {
+            get
+            {
+                return SteamVR_Actions.p_eyetest_trackTouch.GetCopy<SteamVR_Action_Boolean>();
+            }
+        }
+        
         private static void InitializeActionArrays()
         {
             Valve.VR.SteamVR_Input.actions = new Valve.VR.SteamVR_Action[] {
@@ -239,7 +269,10 @@ namespace Valve.VR
                     SteamVR_Actions.buggy_Brake,
                     SteamVR_Actions.buggy_Reset,
                     SteamVR_Actions.mixedreality_ExternalCamera,
-                    SteamVR_Actions.eyetest_GUIoff};
+                    SteamVR_Actions.eyetest_GUIoff,
+                    SteamVR_Actions.eyetest_trackPosition,
+                    SteamVR_Actions.eyetest_trackClick,
+                    SteamVR_Actions.eyetest_trackTouch};
             Valve.VR.SteamVR_Input.actionsIn = new Valve.VR.ISteamVR_Action_In[] {
                     SteamVR_Actions.default_InteractUI,
                     SteamVR_Actions.default_Teleport,
@@ -259,7 +292,10 @@ namespace Valve.VR
                     SteamVR_Actions.buggy_Brake,
                     SteamVR_Actions.buggy_Reset,
                     SteamVR_Actions.mixedreality_ExternalCamera,
-                    SteamVR_Actions.eyetest_GUIoff};
+                    SteamVR_Actions.eyetest_GUIoff,
+                    SteamVR_Actions.eyetest_trackPosition,
+                    SteamVR_Actions.eyetest_trackClick,
+                    SteamVR_Actions.eyetest_trackTouch};
             Valve.VR.SteamVR_Input.actionsOut = new Valve.VR.ISteamVR_Action_Out[] {
                     SteamVR_Actions.default_Haptic};
             Valve.VR.SteamVR_Input.actionsVibration = new Valve.VR.SteamVR_Action_Vibration[] {
@@ -278,13 +314,16 @@ namespace Valve.VR
                     SteamVR_Actions.platformer_Jump,
                     SteamVR_Actions.buggy_Brake,
                     SteamVR_Actions.buggy_Reset,
-                    SteamVR_Actions.eyetest_GUIoff};
+                    SteamVR_Actions.eyetest_GUIoff,
+                    SteamVR_Actions.eyetest_trackClick,
+                    SteamVR_Actions.eyetest_trackTouch};
             Valve.VR.SteamVR_Input.actionsSingle = new Valve.VR.SteamVR_Action_Single[] {
                     SteamVR_Actions.default_Squeeze,
                     SteamVR_Actions.buggy_Throttle};
             Valve.VR.SteamVR_Input.actionsVector2 = new Valve.VR.SteamVR_Action_Vector2[] {
                     SteamVR_Actions.platformer_Move,
-                    SteamVR_Actions.buggy_Steering};
+                    SteamVR_Actions.buggy_Steering,
+                    SteamVR_Actions.eyetest_trackPosition};
             Valve.VR.SteamVR_Input.actionsVector3 = new Valve.VR.SteamVR_Action_Vector3[0];
             Valve.VR.SteamVR_Input.actionsSkeleton = new Valve.VR.SteamVR_Action_Skeleton[] {
                     SteamVR_Actions.default_SkeletonLeftHand,
@@ -304,7 +343,10 @@ namespace Valve.VR
                     SteamVR_Actions.buggy_Throttle,
                     SteamVR_Actions.buggy_Brake,
                     SteamVR_Actions.buggy_Reset,
-                    SteamVR_Actions.eyetest_GUIoff};
+                    SteamVR_Actions.eyetest_GUIoff,
+                    SteamVR_Actions.eyetest_trackPosition,
+                    SteamVR_Actions.eyetest_trackClick,
+                    SteamVR_Actions.eyetest_trackTouch};
         }
         
         private static void PreInitActions()
@@ -329,6 +371,9 @@ namespace Valve.VR
             SteamVR_Actions.p_buggy_Reset = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/buggy/in/Reset")));
             SteamVR_Actions.p_mixedreality_ExternalCamera = ((SteamVR_Action_Pose)(SteamVR_Action.Create<SteamVR_Action_Pose>("/actions/mixedreality/in/ExternalCamera")));
             SteamVR_Actions.p_eyetest_GUIoff = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/eyetest/in/GUIoff")));
+            SteamVR_Actions.p_eyetest_trackPosition = ((SteamVR_Action_Vector2)(SteamVR_Action.Create<SteamVR_Action_Vector2>("/actions/eyetest/in/trackPosition")));
+            SteamVR_Actions.p_eyetest_trackClick = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/eyetest/in/trackClick")));
+            SteamVR_Actions.p_eyetest_trackTouch = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/eyetest/in/trackTouch")));
         }
     }
 }
