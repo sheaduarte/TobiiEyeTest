@@ -67,6 +67,8 @@
     <Compile Include="Assets\Butterflies_cartoon\Scripts\Butterfly.cs" />
     <Compile Include="Assets\Butterflies_cartoon\Scripts\CharacterController.cs" />
     <Compile Include="Assets\EyeTest\Scripts\GUIonGaze.cs" />
+    <Compile Include="Assets\EyeTest\Scripts\Settings.cs" />
+    <Compile Include="Assets\EyeTest\Scripts\SliderController.cs" />
     <Compile Include="Assets\EyeTest\Scripts\SpawnController.cs" />
     <Compile Include="Assets\EyeTest\Scripts\SteamActionController.cs" />
     <Compile Include="Assets\EyeTest\Scripts\UIController.cs" />

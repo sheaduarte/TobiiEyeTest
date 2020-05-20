@@ -11,7 +11,7 @@ public class SpawnController : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        Vector3[] spawnPosList = new Vector3[9];
+        spawnPosList = new Vector3[9];
 
         spawnPosList[0] = new Vector3 (0, 2, -5);
         spawnPosList[1] = new Vector3 (0, 2, -7);
@@ -30,7 +30,15 @@ public class SpawnController : MonoBehaviour
     {
         foreach(Vector3 item in spawnPosList)
         {
-            Instantiate(spawnObject, item);
+            Instantiate(spawnObject, item, Quaternion.identity);
+        }
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            SpawnInNewPos();
         }
     }
 }
