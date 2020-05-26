@@ -72,7 +72,7 @@
     <Compile Include="Assets\EyeTest\Scripts\SliderController.cs" />
     <Compile Include="Assets\EyeTest\Scripts\SpawnController.cs" />
     <Compile Include="Assets\EyeTest\Scripts\SteamActionController.cs" />
-    <Compile Include="Assets\EyeTest\Scripts\TaskEvents.cs" />
+    <Compile Include="Assets\EyeTest\Scripts\TaskEvent.cs" />
     <Compile Include="Assets\EyeTest\Scripts\UIController.cs" />
     <Compile Include="Assets\TobiiXR\Examples\HandEyeCoordination_Example\Plugins\Tobii.HEC.Interop.cs" />
     <Compile Include="Assets\TobiiXR\Examples\HandEyeCoordination_Example\Scripts\Grabbing\GazeGrab.cs" />

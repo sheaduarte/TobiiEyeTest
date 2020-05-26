@@ -7,18 +7,19 @@ public class SliderController : MonoBehaviour
     public float distance;
     public float sensitivity;
     public UIController uiController;
-    public TaskEvents taskevents;
+    public TaskEvent decreaseSliderDistance;
+    public TaskEvent increaseSliderDistance;
 
     private void OnEnable()
     {
-        taskevents.onDecreaseDistance += DecreaseDistance;
-        taskevents.onIncreaseDistance += IncreaseDistance;
+        decreaseSliderDistance.Register(DecreaseDistance);
+        increaseSliderDistance.Register(IncreaseDistance);
     }
 
     private void OnDisable()
     {
-        taskevents.onDecreaseDistance -= DecreaseDistance;
-        taskevents.onIncreaseDistance -= IncreaseDistance;
+        decreaseSliderDistance.Deregister(DecreaseDistance);
+        increaseSliderDistance.Deregister(IncreaseDistance);
     }
     // Start is called before the first frame update
     void Start()

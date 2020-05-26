@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class InputController : MonoBehaviour
 {
-    public TaskEvents taskevents;
+    public TaskEvent decreaseSliderDistance;
+    public TaskEvent increaseSliderDistance;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,8 +16,8 @@ public class InputController : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
-            taskevents.IncreaseDistance();
+            increaseSliderDistance.Raise();
         if (Input.GetKeyDown(KeyCode.DownArrow))
-            taskevents.DecreaseDistance();
+            decreaseSliderDistance.Raise();
     }
 }
