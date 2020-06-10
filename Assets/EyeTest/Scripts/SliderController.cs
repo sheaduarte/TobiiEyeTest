@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SliderController : MonoBehaviour
 {
@@ -9,6 +11,8 @@ public class SliderController : MonoBehaviour
     public UIController uiController;
     public TaskEvent decreaseSliderDistance;
     public TaskEvent increaseSliderDistance;
+    public int minValue, maxValue;
+    public Slider slider;
 
     private void OnEnable()
     {
@@ -38,14 +42,18 @@ public class SliderController : MonoBehaviour
     {
         Debug.Log("slider decrease distance");
         distance = distance - (1 * sensitivity);
+        distance = Mathf.Clamp(distance, minValue, maxValue);
         uiController.SetText(distance.ToString());
+        slider.value = distance;
     }
 
     public void IncreaseDistance()
     {
         Debug.Log("slider increase distance");
         distance = distance + (1 * sensitivity);
+        distance = Mathf.Clamp(distance, minValue, maxValue);
         uiController.SetText(distance.ToString());
+        slider.value = distance;
     }
 
 }

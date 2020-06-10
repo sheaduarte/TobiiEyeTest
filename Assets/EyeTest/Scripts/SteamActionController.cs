@@ -32,4 +32,9 @@ public void GuiOff(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources from
         Debug.Log("trackpad " + axis.x);
     }
 
+    private void Update()
+    {
+        //specify action set, the action we've defined
+        SteamVR_Actions.eyetest
+    }
 }
