@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
@@ -6,9 +7,10 @@ using UnityEngine.XR;
 
 public class Settings : MonoBehaviour
 {
+    public bool vrOn;
     private void Awake()
     {
-        XRSettings.enabled = false;
+        XRSettings.enabled = vrOn;
     }
 
     // Start is called before the first frame update

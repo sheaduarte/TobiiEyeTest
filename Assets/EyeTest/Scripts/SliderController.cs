@@ -56,4 +56,12 @@ public class SliderController : MonoBehaviour
         slider.value = distance;
     }
 
+    public void ChangeDistance(float inputDistance)
+    {
+        Debug.Log("slider decrease distance");
+        distance = distance + (inputDistance * sensitivity);
+        distance = Mathf.Clamp(distance, minValue, maxValue);
+        uiController.SetText(distance.ToString());
+        slider.value = distance;
+    }
 }
