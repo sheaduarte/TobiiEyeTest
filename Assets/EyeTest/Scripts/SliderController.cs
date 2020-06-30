@@ -13,6 +13,7 @@ public class SliderController : MonoBehaviour
     public TaskEvent increaseSliderDistance;
     public int minValue, maxValue;
     public Slider slider;
+  
 
     private void OnEnable()
     {
@@ -36,6 +37,11 @@ public class SliderController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public float GetSliderValue()
+    {
+        return slider.value;
     }
 
     public void DecreaseDistance()
@@ -64,4 +70,5 @@ public class SliderController : MonoBehaviour
         uiController.SetText(distance.ToString());
         slider.value = distance;
     }
+
 }

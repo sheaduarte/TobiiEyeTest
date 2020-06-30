@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[CreateAssetMenu(fileName = "TaskEvent", menuName = "ScriptableObjects/TaskEvent")]
+[CreateAssetMenu(fileName = "TaskEventObject", menuName = "ScriptableObjects/TaskEvent")]
 public class TaskEvent : ScriptableObject
 {
     private UnityEvent unityEvent = new UnityEvent();

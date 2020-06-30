@@ -7,6 +7,7 @@ public class SpawnController : MonoBehaviour
     public GameObject spawnObject;
     public Vector3[] spawnPosList;
     private int spawnTotal;
+    private List<GameObject> objectList = new List<GameObject>();
 
     // Start is called before the first frame update
     private void Start()
@@ -26,11 +27,22 @@ public class SpawnController : MonoBehaviour
 
     }
     // Update is called once per frame
-    void SpawnInNewPos()
+    public void SpawnInNewPos()
     {
         foreach(Vector3 item in spawnPosList)
         {
-            Instantiate(spawnObject, item, Quaternion.identity);
+            GameObject newGameObject = Instantiate(spawnObject, item, Quaternion.identity);
+            objectList.Add(newGameObject);
+
+        }
+    }
+
+
+    public void DestroyAllObjects()
+    {
+        foreach (var item in objectList)
+        {
+            Destroy(item);
         }
     }
 
