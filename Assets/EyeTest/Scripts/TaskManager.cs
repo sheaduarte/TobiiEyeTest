@@ -14,7 +14,7 @@ namespace EyeTest
         // Data related
         List<string> variableList = new List<string>() { "subject", "trial", "response" };
         string dataPath;
-        string subjectID = "test";
+        public string subjectID;
 
         public int numTrials = 10;
         public int numBlocks = 0;
@@ -23,7 +23,7 @@ namespace EyeTest
 
         public SliderController sliderController;
 
-        public TaskEvent logDataRow;
+        //public TaskEvent logDataRow;
 
         public int trial = 0;
 
@@ -34,7 +34,7 @@ namespace EyeTest
 
         private void OnEnable()
         {
-            logDataRow.Register(LogData);
+          //  logDataRow.Register(LogData);
         }
 
         private void Start()
@@ -50,12 +50,12 @@ namespace EyeTest
 
         private void OnDisable()
         {
-            logDataRow.Deregister(LogData);
+           // logDataRow.Deregister(LogData);
             _dataController.Deactivate();
         }
 
 
-        void LogData()
+        public void LogData()
         {
             float response = sliderController.GetSliderValue();
 

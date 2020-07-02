@@ -14,8 +14,9 @@ namespace EyeTest
 
         public override IEnumerator Start()
         {
-
+            // Break between Spawn Controller and GUI
             yield return new WaitForSeconds(3f);
+
             yield return TaskManager.StartCoroutine(ShowSliderPrompt());
 
             // Go to text state
@@ -32,6 +33,8 @@ namespace EyeTest
             {
                 yield return null;
             }
+
+            TaskManager.LogData();
         }
 
     }

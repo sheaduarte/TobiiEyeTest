@@ -16,11 +16,5 @@ namespace EyeTest
 
             yield break;
         }
-
-        public virtual IEnumerator End()
-        {
-
-            yield break;
-        }
     }
 }

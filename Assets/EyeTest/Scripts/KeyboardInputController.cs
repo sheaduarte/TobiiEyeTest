@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InputController : MonoBehaviour
+public class KeyboardInputController : MonoBehaviour
 {
     public TaskEvent decreaseSliderDistance;
     public TaskEvent increaseSliderDistance;
