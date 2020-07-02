@@ -14,7 +14,6 @@ public class ViveController : MonoBehaviour
     public SteamVR_Action_Vector2 onTrackPosition;
     // a reference to the hand
     public SteamVR_Input_Sources handType;
-    public UIController uiController;
 
     public float trackPadSensitivity;
 
@@ -59,7 +58,6 @@ public class ViveController : MonoBehaviour
 
     public void GuiOff(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
-        uiController.Hide();
         Debug.Log("Trigger Down");
     }
 

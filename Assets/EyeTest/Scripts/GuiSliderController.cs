@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
-public class UIController : MonoBehaviour
+public class GuiSliderController : MonoBehaviour
 
 {
     public GameObject canvas;
-    public TextMeshProUGUI textbox;
+    public Slider slider;
 
     private void Start()
     {
@@ -20,11 +20,4 @@ public class UIController : MonoBehaviour
     {
         canvas.SetActive(false);
     }
-
-    public void SetText(string newtext)
-    {
-        textbox.text = newtext;
-    }
-
-
 }
