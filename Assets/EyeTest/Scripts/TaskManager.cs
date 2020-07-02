@@ -35,7 +35,6 @@ namespace EyeTest
         private void OnEnable()
         {
             logDataRow.Register(LogData);
-
         }
 
         private void Start()
@@ -44,6 +43,8 @@ namespace EyeTest
             dataPath = Path.Combine(Application.dataPath, "..", "..", "Data");
             _dataController = new DataController(variableList, dataPath, subjectID);
             _dataController.Activate();
+
+            SetState(new StartBlock(this));
 
         }
 

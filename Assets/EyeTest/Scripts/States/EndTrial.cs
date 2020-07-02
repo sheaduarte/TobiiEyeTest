@@ -18,18 +18,19 @@ namespace EyeTest
             // Advance trial counter
             TaskManager.trial += 1;
 
-            yield return null;
 
             // Go to text state
 
             if(TaskManager.trial < TaskManager.numTrials)
             {
-                TaskManager.SetState(new StartTrial(TaskManager));
+                TaskManager.SetState(new ITI(TaskManager));
             }
             else
             {
                 TaskManager.SetState(new EndBlock(TaskManager));
             }
+
+            yield return null;
 
         }
 

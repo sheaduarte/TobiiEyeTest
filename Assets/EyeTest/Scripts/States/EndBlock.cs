@@ -12,13 +12,15 @@ namespace EyeTest
 
         public override IEnumerator Start()
         {
-            if(TaskManager.block < TaskManager.numBlocks)
+            TaskManager.block +=1;
+
+            if(TaskManager.block <TaskManager.numBlocks)
             {
-                TaskManager.SetState(new StartTrial(TaskManager));
+                TaskManager.SetState(new StartBlock(TaskManager));
             }
             else
             {
-                TaskManager.SetState(new EndBlock(TaskManager));
+                TaskManager.SetState(new EndTask(TaskManager));
             }
 
             yield return null;

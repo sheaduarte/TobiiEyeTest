@@ -11,7 +11,9 @@ public class GuiTextController : MonoBehaviour
 
     private void Start()
     {
+        Hide();
     }
+
     public void Show() 
     {
         canvas.SetActive(true);

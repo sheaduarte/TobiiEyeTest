@@ -11,7 +11,11 @@ namespace EyeTest
 
         public override IEnumerator Start()
         {
-            yield break;
+            TaskManager.trial = 0;
+
+            TaskManager.SetState(new StartTrial(TaskManager));
+
+            yield return null;
         }
     }
 }

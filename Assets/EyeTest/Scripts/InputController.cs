@@ -6,7 +6,7 @@ public class InputController : MonoBehaviour
 {
     public TaskEvent decreaseSliderDistance;
     public TaskEvent increaseSliderDistance;
-    public TaskEvent logDataRow;
+    public TaskEvent setSliderValue;
 
     // Start is called before the first frame update
     void Start()
@@ -33,9 +33,9 @@ public class InputController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            Debug.Log("Down arrow down.");
+            Debug.Log("Return down.");
 
-            logDataRow.Raise();
+            setSliderValue.Raise();
 
         }
     }

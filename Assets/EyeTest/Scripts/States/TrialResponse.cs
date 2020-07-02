@@ -15,7 +15,7 @@ namespace EyeTest
         public override IEnumerator Start()
         {
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(3f);
             yield return TaskManager.StartCoroutine(ShowSliderPrompt());
 
             // Go to text state
@@ -25,20 +25,13 @@ namespace EyeTest
 
         public IEnumerator ShowSliderPrompt()
         {
-            //Debug.Log("Show slider prompt");
-
-            //while (!_isDataLogged)
-            //{
-            //    yield return null;
-            //}
-
-            //Debug.Log("Data is logged.");
-
-            //yield return new WaitForSeconds(1f);
-            //_isDataLogged = false;
 
             TaskManager.sliderController.enabled = true;
-            yield return null;
+
+            while (TaskManager.sliderController.enabled)
+            {
+                yield return null;
+            }
         }
 
     }

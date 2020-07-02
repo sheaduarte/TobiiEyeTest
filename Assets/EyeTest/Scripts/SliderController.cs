@@ -16,11 +16,16 @@ namespace EyeTest
         public TaskEvent setSliderValue;
 
         public int minValue, maxValue;
-        public Slider slider;
+        public GuiSliderController guiSliderController;
 
 
         private void OnEnable()
         {
+            guiTextController.Show();
+            guiSliderController.Show();
+
+            guiTextController.SetText(distance.ToString());
+
             decreaseSliderDistance.Register(DecreaseDistance);
             increaseSliderDistance.Register(IncreaseDistance);
             setSliderValue.Register(SliderValueSet);
@@ -28,19 +33,17 @@ namespace EyeTest
 
         private void OnDisable()
         {
+            guiTextController.Hide();
+            guiSliderController.Hide();
+
             decreaseSliderDistance.Deregister(DecreaseDistance);
             increaseSliderDistance.Deregister(IncreaseDistance);
-        }
-        // Start is called before the first frame update
-        void Start()
-        {
-            guiTextController.SetText(distance.ToString());
-            guiTextController.Show();
+            setSliderValue.Deregister(SliderValueSet);
         }
 
         public float GetSliderValue()
         {
-            return slider.value;
+            return guiSliderController.slider.value;
         }
 
         public void DecreaseDistance()
@@ -49,7 +52,7 @@ namespace EyeTest
             distance = distance - (1 * sensitivity);
             distance = Mathf.Clamp(distance, minValue, maxValue);
             guiTextController.SetText(distance.ToString());
-            slider.value = distance;
+            guiSliderController.slider.value = distance;
         }
 
         public void IncreaseDistance()
@@ -58,7 +61,7 @@ namespace EyeTest
             distance = distance + (1 * sensitivity);
             distance = Mathf.Clamp(distance, minValue, maxValue);
             guiTextController.SetText(distance.ToString());
-            slider.value = distance;
+            guiSliderController.slider.value = distance;
         }
 
         public void ChangeDistance(float inputDistance)
@@ -67,12 +70,12 @@ namespace EyeTest
             distance = distance + (inputDistance * sensitivity);
             distance = Mathf.Clamp(distance, minValue, maxValue);
             guiTextController.SetText(distance.ToString());
-            slider.value = distance;
+            guiSliderController.slider.value = distance;
         }
 
         public void SliderValueSet()
         {
-
+            enabled = false;
         }
 
     }

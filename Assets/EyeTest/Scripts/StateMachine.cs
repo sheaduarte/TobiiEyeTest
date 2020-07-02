@@ -9,6 +9,8 @@ namespace EyeTest
 
         public void SetState(State state)
         {
+            Debug.Log(state);
+
             State = state;
             StartCoroutine(State.Start());
         }
