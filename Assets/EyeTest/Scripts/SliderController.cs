@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace EyeTest
 {
-    public class SliderController : MonoBehaviour
+    public class SliderController : Singleton<SliderController>
     {
         public float distance;
         public float sensitivity;

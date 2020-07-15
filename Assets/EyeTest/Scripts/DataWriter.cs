@@ -5,7 +5,7 @@ using System;
 
 namespace EyeTest
 {
-    public class DataController
+    public class DataWriter
     {
         // For writing out our data
         StreamWriter _writer;
@@ -17,7 +17,7 @@ namespace EyeTest
         private List<string> _variableList;
         private string _dataPath;
 
-        public DataController(List<string> variableList, string path, string subjectID)
+        public DataWriter(List<string> variableList, string path, string subjectID)
         {
             _variableList = variableList;
             _dataPath = path;

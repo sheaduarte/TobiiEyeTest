@@ -3,30 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class GuiTextController : MonoBehaviour
-
+namespace EyeTest
 {
-    public GameObject canvas;
-    public TextMeshProUGUI textbox;
+    public class GuiTextController : MonoBehaviour
 
-    private void Start()
     {
-        Hide();
-    }
+        public GameObject canvas;
+        public TextMeshProUGUI textbox;
 
-    public void Show() 
-    {
-        canvas.SetActive(true);
-    }
-    public void Hide()
-    {
-        canvas.SetActive(false);
-    }
+        private void Start()
+        {
+            Hide();
+        }
 
-    public void SetText(string newtext)
-    {
-        textbox.text = newtext;
-    }
+        public void Show()
+        {
+            canvas.SetActive(true);
+        }
+        public void Hide()
+        {
+            canvas.SetActive(false);
+        }
 
-
+        public void SetText(string newtext)
+        {
+            textbox.text = newtext;
+        }
+    } 
 }

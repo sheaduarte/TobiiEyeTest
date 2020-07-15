@@ -2,41 +2,44 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KeyboardInputController : MonoBehaviour
+namespace EyeTest
 {
-    public TaskEvent decreaseSliderDistance;
-    public TaskEvent increaseSliderDistance;
-    public TaskEvent setSliderValue;
-
-    // Start is called before the first frame update
-    void Start()
+    public class KeyboardInputController : MonoBehaviour
     {
-        
-    }
+        public TaskEvent decreaseSliderDistance;
+        public TaskEvent increaseSliderDistance;
+        public TaskEvent setSliderValue;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        // Start is called before the first frame update
+        void Start()
         {
-            Debug.Log("Up arrow down.");
-            increaseSliderDistance.Raise();
-
-        }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            Debug.Log("Down arrow down.");
-
-            decreaseSliderDistance.Raise();
 
         }
 
-        if (Input.GetKeyDown(KeyCode.Return))
+        // Update is called once per frame
+        void Update()
         {
-            Debug.Log("Return down.");
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                Debug.Log("Up arrow down.");
+                increaseSliderDistance.Raise();
 
-            setSliderValue.Raise();
+            }
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                Debug.Log("Down arrow down.");
 
+                decreaseSliderDistance.Raise();
+
+            }
+
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                Debug.Log("Return down.");
+
+                setSliderValue.Raise();
+
+            }
         }
-    }
+    } 
 }

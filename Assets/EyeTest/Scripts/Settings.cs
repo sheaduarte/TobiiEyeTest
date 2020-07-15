@@ -5,23 +5,15 @@ using UnityEngine;
 using UnityEngine.XR;
 
 
-public class Settings : MonoBehaviour
+namespace EyeTest
 {
-    public bool vrOn;
-    private void Awake()
+    public class Settings : MonoBehaviour
     {
-        XRSettings.enabled = vrOn;
-    }
+        public bool vrOn;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        private void Awake()
+        {
+            XRSettings.enabled = vrOn;
+        }
+    } 
 }

@@ -12,9 +12,7 @@ namespace EyeTest
 
         public override IEnumerator Start()
         {
-            // Butterfly to spawn
-            TaskManager.spawnController.SpawnInNewPos();
-
+            SpawnController.Instance.SpawnInNewPos();
 
             yield return null;
 

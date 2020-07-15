@@ -3,22 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GuiSliderController : MonoBehaviour
-
+namespace EyeTest
 {
-    public GameObject canvas;
-    public Slider slider;
+    public class GuiSliderController : MonoBehaviour
 
-    private void Start()
     {
-        Hide();
-    }
-    public void Show() 
-    {
-        canvas.SetActive(true);
-    }
-    public void Hide()
-    {
-        canvas.SetActive(false);
-    }
+        public GameObject canvas;
+        public Slider slider;
+
+        private void Start()
+        {
+            Hide();
+        }
+        public void Show()
+        {
+            canvas.SetActive(true);
+        }
+        public void Hide()
+        {
+            canvas.SetActive(false);
+        }
+    } 
 }

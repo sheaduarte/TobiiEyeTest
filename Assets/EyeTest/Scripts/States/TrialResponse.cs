@@ -27,14 +27,14 @@ namespace EyeTest
         public IEnumerator ShowSliderPrompt()
         {
 
-            TaskManager.sliderController.enabled = true;
+            SliderController.Instance.enabled = true;
 
-            while (TaskManager.sliderController.enabled)
+            while (SliderController.Instance.enabled)
             {
                 yield return null;
             }
 
-            TaskManager.LogData();
+            DataManager.Instance.WriteDataRow();
         }
 
     }

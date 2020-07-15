@@ -13,15 +13,15 @@ namespace EyeTest
         public override IEnumerator Start()
         {
             // Butterfly to spawn
-            TaskManager.spawnController.DestroyAllObjects();
+            SpawnController.Instance.DestroyAllObjects();
 
             // Advance trial counter
-            TaskManager.trial += 1;
+            DataManager.Instance.trial += 1;
 
 
             // Go to text state
 
-            if(TaskManager.trial < TaskManager.numTrials)
+            if (DataManager.Instance.trial < TaskManager.numTrials)
             {
                 TaskManager.SetState(new ITI(TaskManager));
             }
