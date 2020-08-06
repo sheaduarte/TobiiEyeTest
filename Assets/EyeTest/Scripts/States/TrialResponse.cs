@@ -15,7 +15,7 @@ namespace EyeTest
         public override IEnumerator Start()
         {
             // Break between Spawn Controller and GUI
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(.2f);
 
             yield return TaskManager.StartCoroutine(ShowSliderPrompt());
 

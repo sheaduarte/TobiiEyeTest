@@ -3,7 +3,7 @@
 namespace EyeTest
 {
 
-    public abstract class StateMachine : MonoBehaviour
+    public abstract class StateMachine : Singleton<StateMachine>
     {
         protected State State;
 

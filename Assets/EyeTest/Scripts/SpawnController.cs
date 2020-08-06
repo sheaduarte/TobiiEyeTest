@@ -27,11 +27,12 @@ namespace EyeTest
             spawnPosList[8] = new Vector3(6, 2, -9);
         }
 
-        public void SpawnInNewPos()
+        public GameObject SpawnInNewPos()
         {
             objectList = new List<GameObject>();
             GameObject newGameObject = Instantiate(spawnObject, spawnPosList[Random.Range(0, spawnPosList.Length)], Quaternion.identity);
             objectList.Add(newGameObject);
+            return newGameObject;
         }
 
 

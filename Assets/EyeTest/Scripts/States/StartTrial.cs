@@ -5,6 +5,8 @@ namespace EyeTest
 {
     public class StartTrial : State
     {
+        private bool _gazeObjectDetected;
+
        public StartTrial(TaskManager taskManager): base(taskManager)
        {
 
@@ -12,12 +14,34 @@ namespace EyeTest
 
         public override IEnumerator Start()
         {
-            SpawnController.Instance.SpawnInNewPos();
+            _gazeObjectDetected = false;
+            GameObject newObject = SpawnController.Instance.SpawnInNewPos();
+            ObjectGazeDetection objectGaze = null;
 
-            yield return null;
+            while (objectGaze == null)
+            {
+                objectGaze = newObject.GetComponentInChildren(typeof(ObjectGazeDetection)) as ObjectGazeDetection;
+                yield return null;
+            }
+
+            objectGaze.onNewGazeDetected +=GazeObjectDetected;
+
+            while (!_gazeObjectDetected)
+            {
+                yield return null;
+
+            }
+
+            objectGaze.onNewGazeDetected -= GazeObjectDetected;
+
 
             // Go to text state
             TaskManager.SetState(new TrialResponse(TaskManager));
+        }
+
+        private void GazeObjectDetected()
+        {
+            _gazeObjectDetected = true;
         }
 
     }
