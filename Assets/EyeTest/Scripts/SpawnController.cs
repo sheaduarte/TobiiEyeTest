@@ -5,14 +5,45 @@ using UnityEngine;
 public class SpawnController : MonoBehaviour
 {
     public GameObject spawnObject;
+<<<<<<< HEAD
     public Transform[] spawnPosList;
     public float spawnTime;
     public float stimulusDuration;
     private bool keyPressed = false;
 
+=======
+    public Vector3[] spawnPosList;
+    private int spawnTotal;
+    private List<GameObject> objectList;
 
-    private void Update()
+    // Start is called before the first frame update
+    private void Start()
     {
+        spawnPosList = new Vector3[9];
+
+        spawnPosList[0] = new Vector3 (0, 2, -5);
+        spawnPosList[1] = new Vector3 (0, 2, -7);
+        spawnPosList[2] = new Vector3 (0, 2, -9);
+        spawnPosList[3] = new Vector3 (3, 2, -5);
+        spawnPosList[4] = new Vector3 (3, 2, -7);
+        spawnPosList[5] = new Vector3 (3, 2, -9);
+        spawnPosList[6] = new Vector3 (6, 2, -5);
+        spawnPosList[7] = new Vector3 (6, 2, -7);
+        spawnPosList[8] = new Vector3 (6, 2, -9);
+    }
+    // Update is called once per frame
+    public void SpawnInNewPos()
+    {
+        objectList = new List<GameObject>();
+        GameObject newGameObject = Instantiate(spawnObject, spawnPosList[Random.Range(0, spawnPosList.Length)], Quaternion.identity);
+        objectList.Add(newGameObject);
+    }
+>>>>>>> jared
+
+
+    public void DestroyAllObjects()
+    {
+<<<<<<< HEAD
         if (Input.GetKeyDown(KeyCode.Space) && !keyPressed)
         {
             //invokerepeating("spawninnewpos", spawntime, spawntime);
@@ -23,6 +54,11 @@ public class SpawnController : MonoBehaviour
         else if (Input.GetKeyUp(KeyCode.Space))
         {
             keyPressed = false;
+=======
+        foreach (var item in objectList)
+        {
+            Destroy(item);
+>>>>>>> jared
         }
 
     }

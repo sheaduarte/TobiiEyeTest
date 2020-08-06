@@ -4,64 +4,79 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SliderController : MonoBehaviour
+namespace EyeTest
 {
-    public float distance;
-    public float sensitivity;
-    public UIController uiController;
-    public TaskEvent decreaseSliderDistance;
-    public TaskEvent increaseSliderDistance;
-    public int minValue, maxValue;
-    public Slider slider;
+    public class SliderController : MonoBehaviour
+    {
+        public float distance;
+        public float sensitivity;
+        public GuiTextController guiTextController;
+        public TaskEvent decreaseSliderDistance;
+        public TaskEvent increaseSliderDistance;
+        public TaskEvent setSliderValue;
 
-    private void OnEnable()
-    {
-        decreaseSliderDistance.Register(DecreaseDistance);
-        increaseSliderDistance.Register(IncreaseDistance);
-    }
+        public int minValue, maxValue;
+        public GuiSliderController guiSliderController;
 
-    private void OnDisable()
-    {
-        decreaseSliderDistance.Deregister(DecreaseDistance);
-        increaseSliderDistance.Deregister(IncreaseDistance);
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        uiController.SetText(distance.ToString());
-        uiController.Show();
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        private void OnEnable()
+        {
+            guiTextController.Show();
+            guiSliderController.Show();
 
-    public void DecreaseDistance()
-    {
-        Debug.Log("slider decrease distance");
-        distance = distance - (1 * sensitivity);
-        distance = Mathf.Clamp(distance, minValue, maxValue);
-        uiController.SetText(distance.ToString());
-        slider.value = distance;
-    }
+            guiTextController.SetText(distance.ToString());
 
-    public void IncreaseDistance()
-    {
-        Debug.Log("slider increase distance");
-        distance = distance + (1 * sensitivity);
-        distance = Mathf.Clamp(distance, minValue, maxValue);
-        uiController.SetText(distance.ToString());
-        slider.value = distance;
-    }
+            decreaseSliderDistance.Register(DecreaseDistance);
+            increaseSliderDistance.Register(IncreaseDistance);
+            setSliderValue.Register(SliderValueSet);
+        }
 
-    public void ChangeDistance(float inputDistance)
-    {
-        Debug.Log("slider decrease distance");
-        distance = distance + (inputDistance * sensitivity);
-        distance = Mathf.Clamp(distance, minValue, maxValue);
-        uiController.SetText(distance.ToString());
-        slider.value = distance;
+        private void OnDisable()
+        {
+            guiTextController.Hide();
+            guiSliderController.Hide();
+
+            decreaseSliderDistance.Deregister(DecreaseDistance);
+            increaseSliderDistance.Deregister(IncreaseDistance);
+            setSliderValue.Deregister(SliderValueSet);
+        }
+
+        public float GetSliderValue()
+        {
+            return guiSliderController.slider.value;
+        }
+
+        public void DecreaseDistance()
+        {
+            Debug.Log("slider decrease distance");
+            distance = distance - (1 * sensitivity);
+            distance = Mathf.Clamp(distance, minValue, maxValue);
+            guiTextController.SetText(distance.ToString());
+            guiSliderController.slider.value = distance;
+        }
+
+        public void IncreaseDistance()
+        {
+            Debug.Log("slider increase distance");
+            distance = distance + (1 * sensitivity);
+            distance = Mathf.Clamp(distance, minValue, maxValue);
+            guiTextController.SetText(distance.ToString());
+            guiSliderController.slider.value = distance;
+        }
+
+        public void ChangeDistance(float inputDistance)
+        {
+            Debug.Log("slider decrease distance");
+            distance = distance + (inputDistance * sensitivity);
+            distance = Mathf.Clamp(distance, minValue, maxValue);
+            guiTextController.SetText(distance.ToString());
+            guiSliderController.slider.value = distance;
+        }
+
+        public void SliderValueSet()
+        {
+            enabled = false;
+        }
+
     }
 }
