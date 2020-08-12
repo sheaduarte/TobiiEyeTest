@@ -1,14 +1,11 @@
 ﻿using System.Collections;
 using UnityEngine;
+using EyeTest.Data;
 
 namespace EyeTest
 {
     public class EndTrial : State
     {
-        public EndTrial(TaskManager taskManager) : base(taskManager)
-        {
-
-        }
 
         public override IEnumerator Start()
         {
@@ -16,18 +13,17 @@ namespace EyeTest
             SpawnController.Instance.DestroyAllObjects();
 
             // Advance trial counter
-            DataManager.Instance.trial += 1;
+            DataManager.Instance.trialData.trial += 1;
 
 
             // Go to text state
-
-            if (DataManager.Instance.trial < TaskManager.numTrials)
+            if (DataManager.Instance.trialData.trial < TaskManager.Instance.numTrials)
             {
-                TaskManager.SetState(new ITI(TaskManager));
+                TaskManager.Instance.SetState(new ITI());
             }
             else
             {
-                TaskManager.SetState(new EndBlock(TaskManager));
+                TaskManager.Instance.SetState(new EndBlock());
             }
 
             yield return null;

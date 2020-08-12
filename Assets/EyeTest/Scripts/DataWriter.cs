@@ -8,45 +8,34 @@ namespace EyeTest
     public class DataWriter
     {
         // For writing out our data
-        StreamWriter _writer;
-        string _subjectID;
+        StreamWriter _writer = null;
 
-        // Store a row of data
-        public Dictionary<string, string> row = new Dictionary<string, string>();
-
+        public Dictionary<string, object> row = new Dictionary<string, object>();
         private List<string> _variableList;
-        private string _dataPath;
+        private string _filePath;
 
-        public DataWriter(List<string> variableList, string path, string subjectID)
+        public DataWriter(string filePath)
         {
-            _variableList = variableList;
-            _dataPath = path;
-            _subjectID = subjectID;
+            _filePath = filePath;
         }
 
-        public void Activate()
+        public void Activate(List<string> variableList)
         {
+            _variableList = variableList;
+
             foreach (var i in _variableList)
             {
                 row.Add(i, "");
             }
-
-            Directory.CreateDirectory(_dataPath);
-
-            string timeStamp = DateTime.Now.ToString("MM_dd_yyyy_hh_mm_ss");
-
-            var filePath = Path.Combine(_dataPath, _subjectID + "_" + timeStamp + ".csv");
-
-            _writer = new StreamWriter(filePath);
+            _writer = new StreamWriter(_filePath);
             _writer.AutoFlush = true;
 
             WriteHeader();
         }
 
-        void WriteHeader()
+        private void WriteHeader()
         {
-            string line = String.Join(",", _variableList);
-            _writer.WriteLine(line);
+            _writer.WriteLine(string.Join(",", _variableList));
         }
 
         public void Log()
@@ -54,17 +43,27 @@ namespace EyeTest
             WriteValues(row);
         }
 
-        void WriteValues(Dictionary<string, string> row)
+        public void SetValue<T>(T key, object value)
         {
-            List<string> valueList = new List<string>();
-
-            foreach (KeyValuePair<string, string> entry in row)
+            if (!typeof(T).IsEnum)
             {
-                valueList.Add(entry.Value);
+                throw new ArgumentException("T must be an enumerated type");
+            }
+
+            row[key.ToString()] = value;
+        }
+
+        void WriteValues(Dictionary<string, object> row)
+        {
+            var valueList = new List<string>();
+
+            foreach (KeyValuePair<string, object> entry in row)
+            {
+                valueList.Add(ToCsvCell(entry.Value));
             }
 
 
-            string line = String.Join(",", valueList);
+            var line = String.Join(",", valueList);
 
             _writer.WriteLine(line);
         }
@@ -72,7 +71,26 @@ namespace EyeTest
 
         public void Deactivate()
         {
-            _writer.Close();
+            if(_writer != null)
+                _writer.Close();
+        }
+        
+        private static string ToCsvCell(object o)
+        {
+            if (o == null)
+            {
+                return "";
+            }
+            var s = o.ToString();
+            if (s.Contains(","))
+            {
+                if (s.Contains("\""))
+                {
+                    s.Replace("\"", "\\\"");
+                }
+                return "\"" + s + "\"";
+            }
+            return s;
         }
     }
 

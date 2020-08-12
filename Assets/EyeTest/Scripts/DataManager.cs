@@ -1,47 +1,27 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System;
+using System.Collections;
 using System.IO;
+using UnityEngine;
 
-namespace EyeTest
+namespace EyeTest.Data
 {
     public class DataManager : Singleton<DataManager>
     {
-        public string subjectID;
-        public int trial = 0;
+        public static string SubjectID, DataPath, SubjectDataPath, TimeStamp;
 
-        private DataWriter _dataWriter;
-        private string _dataPath;
+        public TrialData trialData;
+        public TobiiEyeData eyeData;
 
-        List<string> _variableList = new List<string>() { "subject", "trial", "response" };
-
-        private void OnDisable()
+        public static IEnumerator Setup(string subjectID)
         {
-            DisableDataWRiter();
-        }
+            SubjectID = subjectID;
+            DataPath = Path.Combine(Application.dataPath, "..", "..", "Data");
+            SubjectDataPath = Path.Combine(DataPath, SubjectID);
+            Directory.CreateDirectory(DataPath);
+            Directory.CreateDirectory(SubjectDataPath);
+            TimeStamp = DateTime.Now.ToString("MM_dd_yyyy_hh_mm_ss");
 
-        public void EnableDataWriter()
-        {
-            // Setup data writer
-            _dataPath = Path.Combine(Application.dataPath, "..", "..", "Data");
-            _dataWriter = new DataWriter(_variableList, _dataPath, subjectID);
-            _dataWriter.Activate();
-        }
-
-        public void DisableDataWRiter()
-        {
-            _dataWriter.Deactivate();
-        }
-
-        public void WriteDataRow()
-        {
-
-            float response = SliderController.Instance.GetSliderValue();
-
-            _dataWriter.row["subject"] = subjectID;
-            _dataWriter.row["trial"] = trial.ToString();
-            _dataWriter.row["response"] = response.ToString();
-            _dataWriter.Log();
+            yield return null;
         }
 
     }

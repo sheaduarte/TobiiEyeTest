@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace EyeTest
 {
-    public class SliderController : Singleton<SliderController>
+    public class SliderHandler : Singleton<SliderHandler>
     {
         public float distance;
         public float sensitivity;
@@ -71,6 +71,11 @@ namespace EyeTest
             distance = Mathf.Clamp(distance, minValue, maxValue);
             guiTextController.SetText(distance.ToString());
             guiSliderController.slider.value = distance;
+        }
+
+        public void MoveSliderInView()
+        {
+            
         }
 
         public void SliderValueSet()

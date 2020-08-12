@@ -1,22 +1,20 @@
 ﻿using System.Collections;
+using EyeTest.Data;
 
 namespace EyeTest
 {
     public class Initialize : State
     {
-        public Initialize(TaskManager taskManager) : base(taskManager)
-        {
-
-        }
-
         public override IEnumerator Start()
         {
 
-            DataManager.Instance.EnableDataWriter();
+            DataManager.Instance.trialData.EnableDataWriter();
+            DataManager.Instance.eyeData.EnableDataWriter();
+
 
             yield return null;
 
-            TaskManager.SetState(new StartBlock(TaskManager));
+            TaskManager.Instance.SetState(new StartBlock());
         }
     } 
 }

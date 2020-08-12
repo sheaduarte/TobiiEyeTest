@@ -2,22 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using EyeTest.Data;
 
 namespace EyeTest
 {
-    public class TaskManager : StateMachine
+    public class TaskManager : Singleton<TaskManager>
     {
+        
+        public string subjectID;
 
-        public int numTrials = 10;
-        public int numBlocks = 0;
+        public int numTrials,numBlocks,block;
 
-
-        public int block = 0;
+        public State State;
 
         private void Start()
         {
+            StartCoroutine(StartCo());
+        }
 
-            SetState(new Initialize(this));
+        private IEnumerator StartCo()
+        {
+            yield return StartCoroutine(DataManager.Setup(subjectID));
+            SetState(new Initialize());
+        }
+
+        public void SetState(State state)
+        {
+            Debug.Log(state);
+
+            State = state;
+            StartCoroutine(State.Start());
         }
     }
 }

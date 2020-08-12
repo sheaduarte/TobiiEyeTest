@@ -1,40 +1,35 @@
 ﻿using System.Collections;
 using UnityEngine;
+using EyeTest.Data;
 
 namespace EyeTest
 {
     public class TrialResponse : State
     {
 
-
-        public TrialResponse(TaskManager taskManager) : base(taskManager)
-        {
-
-        }
-
         public override IEnumerator Start()
         {
             // Break between Spawn Controller and GUI
             yield return new WaitForSeconds(.2f);
 
-            yield return TaskManager.StartCoroutine(ShowSliderPrompt());
+            yield return TaskManager.Instance.StartCoroutine(ShowSliderPrompt());
 
             // Go to text state
-            TaskManager.SetState(new EndTrial(TaskManager));
+            TaskManager.Instance.SetState(new EndTrial());
 
         }
 
         public IEnumerator ShowSliderPrompt()
         {
 
-            SliderController.Instance.enabled = true;
+            SliderHandler.Instance.enabled = true;
 
-            while (SliderController.Instance.enabled)
+            while (SliderHandler.Instance.enabled)
             {
                 yield return null;
             }
 
-            DataManager.Instance.WriteDataRow();
+            DataManager.Instance.trialData.WriteDataRow();
         }
 
     }

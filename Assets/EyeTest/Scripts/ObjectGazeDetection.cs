@@ -17,10 +17,12 @@ public class ObjectGazeDetection : MonoBehaviour, IGazeFocusable
             {
                 onNewGazeDetected();
             }
+
+            GazeObjectController.Instance.SetGazeObject(gameObject);
         }
-        //If this object lost focus, fade the object's color to it's original color
         else
         {
+            GazeObjectController.Instance.SetGazeObject(null);
 
         }
     }

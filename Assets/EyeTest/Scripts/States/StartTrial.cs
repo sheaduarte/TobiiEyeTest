@@ -7,11 +7,6 @@ namespace EyeTest
     {
         private bool _gazeObjectDetected;
 
-       public StartTrial(TaskManager taskManager): base(taskManager)
-       {
-
-       }
-
         public override IEnumerator Start()
         {
             _gazeObjectDetected = false;
@@ -36,7 +31,7 @@ namespace EyeTest
 
 
             // Go to text state
-            TaskManager.SetState(new TrialResponse(TaskManager));
+            TaskManager.Instance.SetState(new TrialResponse());
         }
 
         private void GazeObjectDetected()

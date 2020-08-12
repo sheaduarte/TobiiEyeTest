@@ -5,22 +5,17 @@ namespace EyeTest
 {
     public class EndBlock : State
     {
-        public EndBlock(TaskManager taskManager) : base(taskManager)
-        {
-
-        }
-
         public override IEnumerator Start()
         {
-            TaskManager.block +=1;
+            TaskManager.Instance.block +=1;
 
-            if(TaskManager.block <TaskManager.numBlocks)
+            if(TaskManager.Instance.block <TaskManager.Instance.numBlocks)
             {
-                TaskManager.SetState(new StartBlock(TaskManager));
+                TaskManager.Instance.SetState(new StartBlock());
             }
             else
             {
-                TaskManager.SetState(new EndTask(TaskManager));
+                TaskManager.Instance.SetState(new EndTask());
             }
 
             yield return null;
