@@ -45,6 +45,7 @@ namespace EyeTest.Data
             var filePath = Path.Combine(DataManager.SubjectDataPath, fileName);
 
             _dataWriter = new DataWriter(filePath);
+
             _dataWriter.Activate(Util.EnumToStrings<EyeData>());
             Debug.Log("Eye data writer activated");
         }

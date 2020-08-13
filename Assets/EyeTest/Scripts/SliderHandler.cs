@@ -17,7 +17,12 @@ namespace EyeTest
 
         public int minValue, maxValue;
         public GuiSliderController guiSliderController;
+        private Vector3 _startPosition;
 
+        private void Awake()
+        {
+            _startPosition = transform.position;
+        }
 
         private void OnEnable()
         {
@@ -29,6 +34,7 @@ namespace EyeTest
             decreaseSliderDistance.Register(DecreaseDistance);
             increaseSliderDistance.Register(IncreaseDistance);
             setSliderValue.Register(SliderValueSet);
+
         }
 
         private void OnDisable()
@@ -81,6 +87,12 @@ namespace EyeTest
         public void SliderValueSet()
         {
             enabled = false;
+        }
+
+
+        private void Update()
+        {
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x,0f,0f);
         }
 
     }

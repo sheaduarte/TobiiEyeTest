@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using EyeTest;
 using UnityEngine;
 using Sirenix.OdinInspector;
+using System;
 
 public class GazeObjectController : Singleton<GazeObjectController>
 {
@@ -23,4 +24,5 @@ public class GazeObjectController : Singleton<GazeObjectController>
     {
         gazeObject = newGazeObject;
     }
+
 }

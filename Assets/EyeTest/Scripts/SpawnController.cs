@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 namespace EyeTest
 {
@@ -8,6 +9,8 @@ namespace EyeTest
     {
         public GameObject spawnObject;
         public Vector3[] spawnPosList;
+        public TimeSpan spawnTime;
+
         private int spawnTotal;
         private List<GameObject> objectList;
 
@@ -30,8 +33,11 @@ namespace EyeTest
         public GameObject SpawnInNewPos()
         {
             objectList = new List<GameObject>();
-            GameObject newGameObject = Instantiate(spawnObject, spawnPosList[Random.Range(0, spawnPosList.Length)], Quaternion.identity);
+            GameObject newGameObject = Instantiate(spawnObject, spawnPosList[UnityEngine.Random.Range(0, spawnPosList.Length)], Quaternion.identity);
             objectList.Add(newGameObject);
+
+            spawnTime = TaskManager.Instance.getTimeSinceStart;
+
             return newGameObject;
         }
 

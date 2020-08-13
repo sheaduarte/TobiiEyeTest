@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using System;
 
 namespace EyeTest.Data
 {
@@ -9,7 +11,19 @@ namespace EyeTest.Data
     {
         private DataWriter _dataWriter;
         public int trial = 0;
-        List<string> _variableList = new List<string>() { "subject", "trial", "response" };
+
+        public TimeSpan timeResponse;
+        public TimeSpan timeSpawn;
+        public TimeSpan timeEyeDetect;
+
+        enum Variables{
+            GlobalTime,
+            Trial,
+            Response,
+            TimeSpawn,
+            TimeEyeDetect,
+            TimeResponse
+        }
 
         private void OnDisable()
         {
@@ -23,20 +37,27 @@ namespace EyeTest.Data
             var filePath = Path.Combine(DataManager.SubjectDataPath, fileName);
 
             _dataWriter = new DataWriter(filePath);
-            _dataWriter.Activate(_variableList);
+            _dataWriter.Activate(Util.EnumToStrings<Variables>());
 
             Debug.Log("Trial data writer activated");
         }
 
         public void WriteDataRow()
         {
+            SetValue(Variables.GlobalTime, TaskManager.Instance.getTimeSinceStart.TotalMilliseconds);
+            SetValue(Variables.Trial, trial);
+            SetValue(Variables.Response, SliderHandler.Instance.GetSliderValue());
+            SetValue(Variables.TimeSpawn, timeSpawn.TotalMilliseconds);
+            SetValue(Variables.TimeEyeDetect, timeEyeDetect.TotalMilliseconds);
+            SetValue(Variables.TimeResponse, timeResponse.TotalMilliseconds);
 
-            var response = SliderHandler.Instance.GetSliderValue();
-
-            _dataWriter.row["subject"] = DataManager.SubjectID;
-            _dataWriter.row["trial"] = trial.ToString();
-            _dataWriter.row["response"] = response.ToString();
             _dataWriter.Log();
+        }
+
+
+        private void SetValue(Variables key, object value)
+        {
+            _dataWriter.SetValue(key, value);
         }
     }
 }

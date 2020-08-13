@@ -27,6 +27,7 @@ namespace EyeTest
             {
                 row.Add(i, "");
             }
+
             _writer = new StreamWriter(_filePath);
             _writer.AutoFlush = true;
 

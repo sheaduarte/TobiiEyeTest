@@ -14,6 +14,8 @@ namespace EyeTest
 
             yield return TaskManager.Instance.StartCoroutine(ShowSliderPrompt());
 
+            DataManager.Instance.trialData.timeResponse = TaskManager.Instance.getTimeSinceStart;
+
             // Go to text state
             TaskManager.Instance.SetState(new EndTrial());
 

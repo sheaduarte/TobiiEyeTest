@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using EyeTest.Data;
 using UnityEngine;
 
 namespace EyeTest
@@ -13,6 +14,8 @@ namespace EyeTest
             GameObject newObject = SpawnController.Instance.SpawnInNewPos();
             ObjectGazeDetection objectGaze = null;
 
+            DataManager.Instance.trialData.timeSpawn = TaskManager.Instance.getTimeSinceStart;
+
             while (objectGaze == null)
             {
                 objectGaze = newObject.GetComponentInChildren(typeof(ObjectGazeDetection)) as ObjectGazeDetection;
@@ -24,8 +27,9 @@ namespace EyeTest
             while (!_gazeObjectDetected)
             {
                 yield return null;
-
             }
+
+            DataManager.Instance.trialData.timeEyeDetect = TaskManager.Instance.getTimeSinceStart;
 
             objectGaze.onNewGazeDetected -= GazeObjectDetected;
 

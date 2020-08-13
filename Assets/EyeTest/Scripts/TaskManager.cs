@@ -8,7 +8,9 @@ namespace EyeTest
 {
     public class TaskManager : Singleton<TaskManager>
     {
-        
+        private DateTime startTime;
+        public TimeSpan getTimeSinceStart { get { return DateTime.Now - startTime; } }
+
         public string subjectID;
 
         public int numTrials,numBlocks,block;
@@ -17,6 +19,8 @@ namespace EyeTest
 
         private void Start()
         {
+            startTime = DateTime.Now;
+
             StartCoroutine(StartCo());
         }
 
