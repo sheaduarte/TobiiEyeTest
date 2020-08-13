@@ -24,9 +24,9 @@ namespace EyeTest
         public IEnumerator ShowSliderPrompt()
         {
 
-            SliderHandler.Instance.enabled = true;
+            SliderHandler.Instance.Show();
 
-            while (SliderHandler.Instance.enabled)
+            while (SliderHandler.Instance.sliderShowing)
             {
                 yield return null;
             }

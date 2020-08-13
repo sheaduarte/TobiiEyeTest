@@ -17,15 +17,37 @@ namespace EyeTest
 
         public int minValue, maxValue;
         public GuiSliderController guiSliderController;
-        private Vector3 _startPosition;
+        public Transform head;
 
-        private void Awake()
+        private Vector3 _headPositionDifference;
+        public bool sliderShowing = false;
+
+        private void Start()
         {
-            _startPosition = transform.position;
+            _headPositionDifference = head.position - transform.position;
         }
 
-        private void OnEnable()
+        public void Show()
         {
+            sliderShowing = true;
+
+
+            Vector3 playerPos = head.transform.position;
+            Vector3 playerDirection = head.transform.forward;
+            playerDirection.y = 0;
+            Quaternion playerRotation = head.transform.rotation;
+            float spawnDistance = 10;
+
+            Vector3 spawnPos = playerPos + playerDirection * spawnDistance;
+
+            transform.position = spawnPos;
+
+
+            Vector3 v = head.transform.position - transform.position;
+            v.x = v.z = 0.0f;
+            transform.LookAt(head.transform.position - v);
+            transform.Rotate(0, 180, 0);
+
             guiTextController.Show();
             guiSliderController.Show();
 
@@ -33,18 +55,21 @@ namespace EyeTest
 
             decreaseSliderDistance.Register(DecreaseDistance);
             increaseSliderDistance.Register(IncreaseDistance);
-            setSliderValue.Register(SliderValueSet);
+            setSliderValue.Register(Hide);
 
         }
 
-        private void OnDisable()
+        private void Hide()
         {
+            Debug.Log("Hide Slider");
+            sliderShowing = false;
+
             guiTextController.Hide();
             guiSliderController.Hide();
 
             decreaseSliderDistance.Deregister(DecreaseDistance);
             increaseSliderDistance.Deregister(IncreaseDistance);
-            setSliderValue.Deregister(SliderValueSet);
+            setSliderValue.Deregister(Hide);
         }
 
         public float GetSliderValue()
@@ -77,22 +102,6 @@ namespace EyeTest
             distance = Mathf.Clamp(distance, minValue, maxValue);
             guiTextController.SetText(distance.ToString());
             guiSliderController.slider.value = distance;
-        }
-
-        public void MoveSliderInView()
-        {
-            
-        }
-
-        public void SliderValueSet()
-        {
-            enabled = false;
-        }
-
-
-        private void Update()
-        {
-            transform.eulerAngles = new Vector3(transform.eulerAngles.x,0f,0f);
         }
 
     }

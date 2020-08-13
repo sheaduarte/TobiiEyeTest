@@ -23,7 +23,7 @@ namespace EyeTest
                 decreaseSliderDistance.Raise();
             }
 
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetMouseButtonDown(0))
             {
                 setSliderValue.Raise();
             }
